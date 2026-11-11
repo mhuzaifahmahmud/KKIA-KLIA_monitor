@@ -1,6 +1,7 @@
 """Offline tests: run with  python -m unittest discover -s tests -v   (from the project root)."""
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -14,6 +15,7 @@ sys.path.insert(0, str(PROJECT / "scripts"))
 
 import analyze  # noqa: E402
 import fetch  # noqa: E402
+import fetch_playwright as fp  # noqa: E402
 
 FIXTURE = PROJECT / "tests" / "fixtures" / "serpapi_sample.json"
 
@@ -24,8 +26,7 @@ def make_root():
     # push the example dates into the future so the tests do not depend on today's date
     text = (tmp / "config.toml").read_text()
     future = (date.today() + timedelta(days=90)).isoformat()
-    for old in ("2026-12-20", "2026-12-27"):
-        text = text.replace(old, future)
+    text = re.sub(r'date = "\d{4}-\d{2}-\d{2}"', f'date = "{future}"', text)
     (tmp / "config.toml").write_text(text)
     return tmp
 
@@ -117,7 +118,7 @@ class EndToEndTests(unittest.TestCase):
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
         self.assertIn("ok     KK to KUL", r.stdout)
         rows = (root / "data" / "prices.csv").read_text().strip().splitlines()
-        self.assertEqual(len(rows), 1 + 4 * 3)  # header + 4 watches x 3 flights
+        self.assertEqual(len(rows), 1 + 6 * 3)  # header + 6 watches x 3 flights
 
         again = run("fetch.py", root, "--mock", str(FIXTURE))
         self.assertIn("already recorded today", again.stdout)
@@ -126,7 +127,7 @@ class EndToEndTests(unittest.TestCase):
         a = run("analyze.py", root)
         self.assertEqual(a.returncode, 0, a.stdout + a.stderr)
         summary = json.loads((root / "docs" / "data" / "summary.json").read_text())
-        self.assertEqual(len(summary["items"]), 4)
+        self.assertEqual(len(summary["items"]), 6)
         first = summary["items"][0]
         self.assertEqual(first["latest"]["price"], 215)
         self.assertEqual(first["checks"], 1)
@@ -155,7 +156,7 @@ class EndToEndTests(unittest.TestCase):
         extra = []
         for off, price in ((3, 260), (2, 250), (1, 245)):
             for r in rows:
-                if r["route"] == "KK to KUL" and r["airline"] == "AirAsia":
+                if r["route"] == "KK to KUL Tue" and r["airline"] == "AirAsia":
                     d = dict(r)
                     d["check_date"] = (date.today() - timedelta(days=off)).isoformat()
                     d["price"] = price
@@ -176,3 +177,59 @@ class EndToEndTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class BrowserParserTests(unittest.TestCase):
+    """The browser scraper's page parser, fed with a layout I expect (not a saved real Google page)."""
+
+    CARDS = [
+        {"text": "6:30\u202fAM \u2013 8:50\u202fAM\nAirAsia\n2 hr 20 min\nBKI\u2013KUL\nNonstop\n95 kg CO2e\nRM\u00a0259",
+         "labels": ["From 259 Malaysian ringgits. Nonstop flight with AirAsia. Leaves Kota Kinabalu International Airport at 6:30 AM on Tuesday."]},
+        {"text": "1:45 PM \u2013 4:05 PM\nBatik Air\n2 hr 20 min\nNonstop\nRM 1,310", "labels": []},
+        {"text": "1:45 PM \u2013 4:05 PM\nBatik Air\n2 hr 20 min\nNonstop\nRM 1,310", "labels": []},  # duplicate
+        {"text": "no price here 9:00 AM", "labels": []},
+    ]
+
+    def test_parse_cards(self):
+        offers = fp.parse_cards(self.CARDS)
+        self.assertEqual([(o["airline"], o["dep_time"], o["stops"], o["price"]) for o in offers],
+                         [("AirAsia", "06:30", 0, 259), ("Batik Air", "13:45", 0, 1310)])
+
+    def test_time_conversion(self):
+        self.assertEqual(fp.parse_time("12:05 AM"), "00:05")
+        self.assertEqual(fp.parse_time("12:05 PM"), "12:05")
+        self.assertEqual(fp.parse_time("9:40 pm"), "21:40")
+
+    def test_one_stop(self):
+        offers = fp.parse_cards([{"text": "7:00 AM\nMalaysia Airlines\n1 stop\nRM 480", "labels": []}])
+        self.assertEqual(offers[0]["stops"], 1)
+
+    def test_insights(self):
+        ins = fp.parse_insights("Prices are currently typical for your search", [{"price": 300}, {"price": 250}])
+        self.assertEqual((ins["price_level"], ins["lowest_price"]), ("typical", 250))
+
+    def test_url(self):
+        url = fp.build_url({"from": "BKI", "to": "KUL", "date": "2027-01-12"}, {"currency": "MYR", "country": "my"})
+        self.assertIn("BKI", url)
+        self.assertIn("2027-01-12", url)
+        self.assertIn("nonstop", url)
+
+    def test_end_to_end_with_fixture(self):
+        chrome = os.environ.get("CHROME_PATH") or shutil.which("google-chrome") or shutil.which("chromium")
+        try:
+            import playwright  # noqa: F401
+        except ImportError:
+            self.skipTest("playwright not installed")
+        if not chrome:
+            self.skipTest("no Chrome available")
+        root = make_root()
+        r = run("fetch_playwright.py", root, "--fixture", str(PROJECT / "tests" / "fixtures" / "gflights_sample.html"),
+                "--only", "KK to KUL Tue", "--chrome-path", chrome)
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        with open(root / "data" / "prices.csv", newline="", encoding="utf-8") as f:
+            rows = list(__import__("csv").DictReader(f))
+        self.assertEqual(len(rows), 4)
+        self.assertEqual(min(int(x["price"]) for x in rows), 259)
+        again = run("fetch_playwright.py", root, "--fixture", str(PROJECT / "tests" / "fixtures" / "gflights_sample.html"),
+                    "--only", "KK to KUL Tue", "--chrome-path", chrome)
+        self.assertIn("already recorded today", again.stdout)

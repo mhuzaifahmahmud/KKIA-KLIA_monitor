@@ -40,6 +40,24 @@ GitHub Actions (daily, 10:30 Malaysia time)
 
 From then on it runs by itself every morning.
 
+## Option: free browser mode on your Mac (no SerpApi searches used)
+
+`scripts/fetch_playwright.py` opens the real Google Flights page in a browser and records the fares into the
+same `data/prices.csv`, so the dashboard, forecast and alerts work unchanged. It runs on your Mac (a home or
+base connection), not on GitHub's servers, which Google often challenges.
+
+1. Move the folder out of Downloads: `mv ~/Downloads/kk-flight-monitor ~/kk-flight-monitor`
+2. `cd ~/kk-flight-monitor && bash mac/install.sh` (needs Python 3.11+; `brew install python` if missing).
+3. First test, with the browser visible and debug files saved:
+   `bash mac/run_monitor.sh --headed --debug --only "KK to KUL Tue"`
+   If it records nothing, send the files in `data/debug/` (screenshot + HTML) so the page reader can be fixed.
+4. It then runs by itself every day at 08:15 (or when the Mac wakes up after that), pushes the new data to
+   GitHub, and the 10:30 GitHub job builds the dashboard. If the Mac was off, the 10:30 job fills the gap with
+   SerpApi, so no day is lost. Logs: `~/Library/Logs/flightmonitor.log`.
+
+It pauses 20-60 seconds between pages, runs one page at a time, and stops immediately if Google shows a
+CAPTCHA. Automated access is against Google's terms; keep the volume this low and do not make it faster.
+
 ## What you get
 
 - **Dashboard:** latest price, price history chart, lowest and highest seen, every airline's fare for the day,
