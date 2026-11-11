@@ -1,38 +1,542 @@
 {
-  "KK to KUL Tue|2027-01-12": {
+  "KK to KUL|2026-12-01": {
+    "signal": "BOOK SOON",
+    "low": 329.0,
+    "price": 329.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2026-12-03": {
+    "signal": "WATCH",
+    "low": 329.0,
+    "price": 329.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2026-12-05": {
+    "signal": "WAIT",
+    "low": 372.0,
+    "price": 372.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2026-12-07": {
+    "signal": "WAIT",
+    "low": 372.0,
+    "price": 372.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2026-12-09": {
+    "signal": "WAIT",
+    "low": 372.0,
+    "price": 372.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2026-12-11": {
+    "signal": "WAIT",
+    "low": 414.0,
+    "price": 414.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2026-12-13": {
+    "signal": "WAIT",
+    "low": 372.0,
+    "price": 372.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2026-12-15": {
+    "signal": "WAIT",
+    "low": 372.0,
+    "price": 372.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2026-12-17": {
+    "signal": "WAIT",
+    "low": 414.0,
+    "price": 414.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2026-12-19": {
+    "signal": "WAIT",
+    "low": 372.0,
+    "price": 372.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2026-12-21": {
+    "signal": "WAIT",
+    "low": 372.0,
+    "price": 372.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2026-12-23": {
+    "signal": "WAIT",
+    "low": 372.0,
+    "price": 372.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2026-12-25": {
+    "signal": "WAIT",
+    "low": 372.0,
+    "price": 372.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2026-12-27": {
+    "signal": "WAIT",
+    "low": 414.0,
+    "price": 414.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2026-12-29": {
+    "signal": "WAIT",
+    "low": 372.0,
+    "price": 372.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2026-12-31": {
+    "signal": "WAIT",
+    "low": 372.0,
+    "price": 372.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2027-01-02": {
+    "signal": "WAIT",
+    "low": 414.0,
+    "price": 414.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2027-01-04": {
+    "signal": "WAIT",
+    "low": 302.0,
+    "price": 302.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2027-01-06": {
+    "signal": "WAIT",
+    "low": 302.0,
+    "price": 302.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2027-01-08": {
+    "signal": "WAIT",
+    "low": 355.0,
+    "price": 355.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2027-01-10": {
+    "signal": "WAIT",
+    "low": 302.0,
+    "price": 302.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2027-01-12": {
     "signal": "WAIT",
     "low": 300.0,
     "price": 300.0,
     "date": "2026-11-11"
   },
-  "KK to KUL Sat|2027-01-16": {
+  "KK to KUL|2027-01-14": {
     "signal": "WAIT",
     "low": 300.0,
     "price": 300.0,
     "date": "2026-11-11"
   },
-  "KK to KUL Wed|2027-01-20": {
+  "KK to KUL|2027-01-16": {
     "signal": "WAIT",
     "low": 300.0,
     "price": 300.0,
     "date": "2026-11-11"
   },
-  "KUL to KK Tue|2027-01-19": {
+  "KK to KUL|2027-01-18": {
+    "signal": "WAIT",
+    "low": 300.0,
+    "price": 300.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2027-01-20": {
+    "signal": "WAIT",
+    "low": 300.0,
+    "price": 300.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2027-01-22": {
+    "signal": "WAIT",
+    "low": 302.0,
+    "price": 302.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2027-01-24": {
+    "signal": "WAIT",
+    "low": 302.0,
+    "price": 302.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2027-01-26": {
+    "signal": "WAIT",
+    "low": 300.0,
+    "price": 300.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2027-01-28": {
+    "signal": "WAIT",
+    "low": 300.0,
+    "price": 300.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2027-01-30": {
+    "signal": "WAIT",
+    "low": 300.0,
+    "price": 300.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2027-02-01": {
+    "signal": "WAIT",
+    "low": 300.0,
+    "price": 300.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2027-02-03": {
+    "signal": "WAIT",
+    "low": 302.0,
+    "price": 302.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2027-02-05": {
+    "signal": "WAIT",
+    "low": 302.0,
+    "price": 302.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2027-02-07": {
+    "signal": "WAIT",
+    "low": 366.0,
+    "price": 366.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2027-02-09": {
+    "signal": "WAIT",
+    "low": 398.0,
+    "price": 398.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2027-02-11": {
+    "signal": "WAIT",
+    "low": 366.0,
+    "price": 366.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2027-02-13": {
+    "signal": "WAIT",
+    "low": 398.0,
+    "price": 398.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2027-02-15": {
+    "signal": "WAIT",
+    "low": 300.0,
+    "price": 300.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2027-02-17": {
+    "signal": "WAIT",
+    "low": 300.0,
+    "price": 300.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2027-02-19": {
+    "signal": "WATCH",
+    "low": 259.0,
+    "price": 259.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2027-02-21": {
+    "signal": "WAIT",
+    "low": 300.0,
+    "price": 300.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2027-02-23": {
     "signal": "WAIT",
     "low": 299.0,
     "price": 299.0,
     "date": "2026-11-11"
   },
-  "KUL to KK Sat|2027-01-23": {
+  "KK to KUL|2027-02-25": {
+    "signal": "WAIT",
+    "low": 299.0,
+    "price": 299.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL|2027-02-27": {
+    "signal": "WAIT",
+    "low": 299.0,
+    "price": 299.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2026-12-01": {
+    "signal": "BOOK SOON",
+    "low": 329.0,
+    "price": 329.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2026-12-03": {
+    "signal": "WATCH",
+    "low": 329.0,
+    "price": 329.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2026-12-05": {
+    "signal": "WATCH",
+    "low": 372.0,
+    "price": 372.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2026-12-07": {
+    "signal": "WATCH",
+    "low": 372.0,
+    "price": 372.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2026-12-09": {
+    "signal": "WATCH",
+    "low": 372.0,
+    "price": 372.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2026-12-11": {
+    "signal": "WATCH",
+    "low": 372.0,
+    "price": 372.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2026-12-13": {
+    "signal": "WAIT",
+    "low": 414.0,
+    "price": 414.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2026-12-15": {
+    "signal": "WAIT",
+    "low": 457.0,
+    "price": 457.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2026-12-17": {
+    "signal": "WAIT",
+    "low": 525.0,
+    "price": 525.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2026-12-19": {
+    "signal": "WAIT",
+    "low": 525.0,
+    "price": 525.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2026-12-21": {
+    "signal": "WATCH",
+    "low": 406.0,
+    "price": 406.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2026-12-23": {
+    "signal": "WAIT",
+    "low": 506.0,
+    "price": 506.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2026-12-25": {
+    "signal": "WAIT",
+    "low": 414.0,
+    "price": 414.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2026-12-27": {
+    "signal": "WAIT",
+    "low": 414.0,
+    "price": 414.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2026-12-29": {
+    "signal": "WATCH",
+    "low": 372.0,
+    "price": 372.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2026-12-31": {
+    "signal": "WATCH",
+    "low": 372.0,
+    "price": 372.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2027-01-02": {
+    "signal": "WAIT",
+    "low": 372.0,
+    "price": 372.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2027-01-04": {
+    "signal": "WAIT",
+    "low": 302.0,
+    "price": 302.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2027-01-06": {
+    "signal": "WAIT",
+    "low": 302.0,
+    "price": 302.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2027-01-08": {
+    "signal": "WAIT",
+    "low": 302.0,
+    "price": 302.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2027-01-10": {
+    "signal": "WAIT",
+    "low": 302.0,
+    "price": 302.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2027-01-12": {
+    "signal": "WAIT",
+    "low": 302.0,
+    "price": 302.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2027-01-14": {
     "signal": "WAIT",
     "low": 300.0,
     "price": 300.0,
     "date": "2026-11-11"
   },
-  "KUL to KK Wed|2027-01-27": {
+  "KUL to KK|2027-01-16": {
     "signal": "WAIT",
     "low": 300.0,
     "price": 300.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2027-01-18": {
+    "signal": "WAIT",
+    "low": 299.0,
+    "price": 299.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2027-01-20": {
+    "signal": "WAIT",
+    "low": 300.0,
+    "price": 300.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2027-01-22": {
+    "signal": "WAIT",
+    "low": 302.0,
+    "price": 302.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2027-01-24": {
+    "signal": "WAIT",
+    "low": 300.0,
+    "price": 300.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2027-01-26": {
+    "signal": "WAIT",
+    "low": 300.0,
+    "price": 300.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2027-01-28": {
+    "signal": "WAIT",
+    "low": 302.0,
+    "price": 302.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2027-01-30": {
+    "signal": "WAIT",
+    "low": 366.0,
+    "price": 366.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2027-02-01": {
+    "signal": "WAIT",
+    "low": 398.0,
+    "price": 398.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2027-02-03": {
+    "signal": "WAIT",
+    "low": 613.0,
+    "price": 613.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2027-02-05": {
+    "signal": "WAIT",
+    "low": 613.0,
+    "price": 613.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2027-02-07": {
+    "signal": "WAIT",
+    "low": 366.0,
+    "price": 366.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2027-02-09": {
+    "signal": "WATCH",
+    "low": 300.0,
+    "price": 300.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2027-02-11": {
+    "signal": "WATCH",
+    "low": 300.0,
+    "price": 300.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2027-02-13": {
+    "signal": "WATCH",
+    "low": 302.0,
+    "price": 302.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2027-02-15": {
+    "signal": "WATCH",
+    "low": 300.0,
+    "price": 300.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2027-02-17": {
+    "signal": "WATCH",
+    "low": 299.0,
+    "price": 299.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2027-02-19": {
+    "signal": "WATCH",
+    "low": 299.0,
+    "price": 299.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2027-02-21": {
+    "signal": "WATCH",
+    "low": 299.0,
+    "price": 299.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2027-02-23": {
+    "signal": "WATCH",
+    "low": 259.0,
+    "price": 259.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2027-02-25": {
+    "signal": "WATCH",
+    "low": 299.0,
+    "price": 299.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK|2027-02-27": {
+    "signal": "WATCH",
+    "low": 302.0,
+    "price": 302.0,
     "date": "2026-11-11"
   }
 }
