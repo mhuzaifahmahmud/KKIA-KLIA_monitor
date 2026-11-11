@@ -1,0 +1,51 @@
+# ---------------------------------------------------------------
+#  KK flight price monitor - settings
+#  EDIT THE [[watch]] DATES BELOW to the dates you actually want.
+# ---------------------------------------------------------------
+
+[settings]
+currency = "MYR"
+country = "my"                  # Google Flights country (affects fares shown)
+nonstop_only = true             # KK to KL/Penang is normally nonstop
+monthly_search_limit = 240      # SerpApi free plan = 250 searches/month; keeps a safety margin
+request_delay_seconds = 5       # pause between searches (polite)
+timezone_offset_hours = 8       # Malaysia time, used for the daily date stamp
+min_history_for_model = 14      # daily checks needed before the trend rule is used
+
+[alerts]
+drop_rm = 20                    # push alert if the cheapest fare falls by at least RM 20 since the last check...
+drop_pct = 8                    # ...or by at least 8 percent
+new_low = true                  # alert when a new lowest price is seen
+book_signal = true              # alert when the signal becomes BOOK NOW / BOOK SOON
+rise_rm = 40                    # alert on a jump of at least RM 40 (a cheap fare tier probably sold out); 0 = off
+daily_summary = false           # true = also send a short summary every day
+
+# One [[watch]] block = one direction on one date = 1 search per day.
+# One search returns every airline, so you do not list airlines.
+# 7 blocks use about 217 searches a month; stay at 7 or fewer on the free plan.
+# Airport codes: BKI = Kota Kinabalu, KUL = Kuala Lumpur, PEN = Penang.
+# When a travel date has passed, that block is skipped automatically.
+
+[[watch]]
+label = "KK to KUL"
+from = "BKI"
+to = "KUL"
+date = "2026-12-20"             # <-- change
+
+[[watch]]
+label = "KUL to KK"
+from = "KUL"
+to = "BKI"
+date = "2026-12-27"             # <-- change
+
+[[watch]]
+label = "KK to PEN"
+from = "BKI"
+to = "PEN"
+date = "2026-12-20"             # <-- change
+
+[[watch]]
+label = "PEN to KK"
+from = "PEN"
+to = "BKI"
+date = "2026-12-27"             # <-- change
