@@ -1,0 +1,64 @@
+name: Daily price check
+
+on:
+  schedule:
+    - cron: "30 2 * * *"   # 02:30 UTC = 10:30 Malaysia time (GitHub may start it a few minutes late)
+  workflow_dispatch:        # lets you press "Run workflow" by hand
+
+permissions:
+  contents: write           # save the new prices back to the repository
+  pages: write              # publish the dashboard
+  id-token: write
+
+concurrency:
+  group: price-monitor
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch today's prices
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+        run: python scripts/fetch.py
+
+      - name: Analyse prices
+        run: python scripts/analyze.py
+
+      - name: Send alert if needed
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: python scripts/alert.py
+
+      - name: Save data to the repository
+        run: |
+          git config user.name "price-monitor-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data docs/data
+          git diff --cached --quiet || git commit -m "Prices for $(date -u +%F)"
+          git push
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - id: deploy
+        uses: actions/deploy-pages@v4
+
+      - name: Tell me if something broke
+        if: failure()
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: python scripts/alert.py --failure
