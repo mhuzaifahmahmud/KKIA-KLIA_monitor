@@ -3,7 +3,7 @@ import csv
 import json
 import os
 import tomllib
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 # MONITOR_ROOT lets the tests run against a temporary copy of the project.
@@ -22,10 +22,31 @@ INSIGHT_FIELDS = [
 ]
 
 
+def expand_ranges(cfg):
+    """Turn every [[range]] block into one watch per travel date, and merge them into cfg["watch"].
+
+    [[range]] label/from/to + start/end (inclusive) + step_days (default 1).
+    Explicit [[watch]] entries are kept; a duplicate label+date is only watched once.
+    """
+    watches = list(cfg.get("watch", []))
+    seen = {(w["label"], w["date"]) for w in watches}
+    for r in cfg.get("range", []):
+        step = max(1, int(r.get("step_days", 1)))
+        day, end = date.fromisoformat(r["start"]), date.fromisoformat(r["end"])
+        while day <= end:
+            key = (r["label"], day.isoformat())
+            if key not in seen:
+                seen.add(key)
+                watches.append({"label": r["label"], "from": r["from"], "to": r["to"], "date": day.isoformat()})
+            day += timedelta(days=step)
+    cfg["watch"] = watches
+    return cfg
+
+
 def load_config(path=None):
     p = Path(path) if path else ROOT / "config.toml"
     with open(p, "rb") as f:
-        return tomllib.load(f)
+        return expand_ranges(tomllib.load(f))
 
 
 def local_now(cfg):

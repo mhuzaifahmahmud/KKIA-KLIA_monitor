@@ -61,3 +61,14 @@ td.num, th.num { text-align: right; padding-right: 0; }
 .panel { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 4px 16px 12px; overflow-x: auto; }
 .empty { padding: 32px 0; color: var(--muted); }
 footer { padding-top: 24px; padding-bottom: 32px; }
+
+.route { margin-top: 28px; }
+.routehead { font-size: 1.25rem; }
+.route > h3 { margin-top: 18px; }
+.chartpanel { padding: 8px 12px; margin-top: 10px; }
+svg.datechart { margin: 4px 0; }
+svg.chart .bar { fill: var(--accent); opacity: 0.75; }
+svg.chart .bar.best { fill: var(--good); opacity: 1; }
+svg.chart .wknd { fill: var(--line); opacity: 0.45; }
+.alldates { margin-top: 12px; }
+.alldates .panel table { min-width: 520px; }

@@ -58,6 +58,16 @@ base connection), not on GitHub's servers, which Google often challenges.
 It pauses 20-60 seconds between pages, runs one page at a time, and stops immediately if Google shows a
 CAPTCHA. Automated access is against Google's terms; keep the volume this low and do not make it faster.
 
+## Choosing dates: `[[range]]`
+
+In `config.toml`, a `[[range]]` watches every Nth day between two dates in one direction. The default watches
+KK to KUL and KUL to KK from 1 Dec 2026 to 28 Feb 2027, every 2nd day (45 dates each way, 90 pages a day).
+Browser mode takes about 1 to 1.5 hours for that, because it pauses 15-40 seconds between pages. To watch fewer
+or more dates, change `start`, `end` and `step_days`. To compare Penang, copy both blocks and change KUL to PEN
+and the labels. The dashboard shows one bar chart per route (cheapest fare for each date), the 3 cheapest
+dates in detail, and a table of all dates. SerpApi on GitHub is only the backup and searches at most
+`serpapi_daily_max` (6) spread-out dates a day, so its free monthly searches last.
+
 ## What you get
 
 - **Dashboard:** latest price, price history chart, lowest and highest seen, every airline's fare for the day,

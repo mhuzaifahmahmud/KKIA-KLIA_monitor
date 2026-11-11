@@ -31,7 +31,7 @@ def dashboard_url():
 
 def decide(summary, state, cfg):
     a = cfg.get("alerts", {})
-    lines, urgent, new_state = [], False, {}
+    entries, urgent, new_state = [], False, {}
     for it in summary["items"]:
         key = c.watch_key(it["label"], it["travel_date"])
         prev = state.get(key, {})
@@ -40,7 +40,7 @@ def decide(summary, state, cfg):
             new_state[key] = prev
             continue
         cur = latest["price"]
-        parts = []
+        parts, hot = [], False
 
         # A manual re-run on the same day must not repeat that day's price alert.
         already_alerted_today = prev.get("date") == latest["date"]
@@ -49,28 +49,42 @@ def decide(summary, state, cfg):
             pct = abs(chg) / prev_price * 100
             if chg < 0 and (abs(chg) >= a.get("drop_rm", 20) or pct >= a.get("drop_pct", 8)):
                 parts.append(f"down RM {abs(chg):.0f} (was {prev_price:.0f})")
-                urgent = True
+                urgent = hot = True
             elif chg > 0 and a.get("rise_rm", 0) and chg >= a["rise_rm"]:
                 parts.append(f"jumped up RM {chg:.0f}; a cheap fare tier probably sold out")
         if (a.get("new_low", True) and it["checks"] >= 3 and prev.get("low") is not None
                 and cur < prev["low"]):
             parts.append("new lowest price seen")
-            urgent = True
+            urgent = hot = True
         sig = it["signal"]
         if a.get("book_signal", True) and sig in ("BOOK NOW", "BOOK SOON") and prev.get("signal") != sig:
             parts.append(f"signal: {sig}. {it['reasons'][0] if it['reasons'] else ''}".strip())
             if sig == "BOOK NOW":
-                urgent = True
+                urgent = hot = True
 
         if parts:
             head = f"{it['label']} {it['travel_date']}: RM {cur:.0f} ({latest['airline']})"
-            lines.append(head + "\n  " + "; ".join(parts))
+            entries.append((hot, head + "\n  " + "; ".join(parts)))
         new_state[key] = {"signal": sig, "low": it["low"], "price": cur, "date": latest["date"]}
+
+    # With many watched dates, send the most important lines first and cap the message.
+    entries.sort(key=lambda e: not e[0])
+    cap = int(a.get("max_lines", 8))
+    lines = [text for _, text in entries[:cap]]
+    if len(entries) > cap:
+        lines.append(f"... and {len(entries) - cap} more changes on the dashboard.")
+    if lines:  # one line per route: the cheapest date right now
+        best = {}
+        for it in summary["items"]:
+            if it["latest"] and (it["label"] not in best or it["latest"]["price"] < best[it["label"]]["latest"]["price"]):
+                best[it["label"]] = it
+        for label, it in best.items():
+            lines.append(f"Cheapest now, {label}: {it['travel_date']} RM {it['latest']['price']:.0f}")
 
     if a.get("daily_summary", False):
         lines.append("Today: " + " | ".join(
             f"{it['label']} {it['travel_date'][5:]} RM {it['latest']['price']:.0f} {it['signal']}"
-            for it in summary["items"] if it["latest"]))
+            for it in summary["items"][:12] if it["latest"]))
     return lines, urgent, new_state
 
 

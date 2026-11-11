@@ -139,10 +139,26 @@ def main():
     done = {(r["check_date"], r["route"], r["travel_date"]) for r in existing}
     google_history = c.read_json(c.DATA / "google_history.json", {})
 
+    # SerpApi is only the backup source: with many watched dates, search just a few spread-out ones per run
+    # so the free monthly searches last. (Skipped when testing with --mock.)
+    pending = [w for w in cfg.get("watch", [])
+               if date.fromisoformat(w["date"]) >= today
+               and (today.isoformat(), w["label"], w["date"]) not in done]
+    cap = int(s.get("serpapi_daily_max", 6))
+    allowed = None
+    if not args.mock and not args.force and len(pending) > cap > 0:
+        step = len(pending) / cap
+        allowed = {id(pending[int(i * step)]) for i in range(cap)}
+        print(f"note   {len(pending)} dates are missing today; searching {cap} spread-out ones "
+              f"(serpapi_daily_max) to protect the monthly limit")
+
     ok = failed = skipped = 0
     first = True
     for w in cfg.get("watch", []):
         label, travel = w["label"], w["date"]
+        if allowed is not None and id(w) not in allowed and date.fromisoformat(travel) >= today \
+                and (today.isoformat(), label, travel) not in done:
+            continue
         if date.fromisoformat(travel) < today:
             print(f"skip   {label} {travel}: travel date has passed")
             skipped += 1

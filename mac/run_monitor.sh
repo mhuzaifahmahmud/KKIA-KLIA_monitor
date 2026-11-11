@@ -15,7 +15,8 @@ done
 
 git pull --rebase --autostash -q || echo "WARN: git pull failed; continuing with local copy"
 
-"$DIR/.venv/bin/python" scripts/fetch_playwright.py "$@"
+# caffeinate keeps the Mac awake while the (long) run is going
+caffeinate -i "$DIR/.venv/bin/python" scripts/fetch_playwright.py "$@"
 status=$?
 
 git add data

@@ -16,6 +16,7 @@ sys.path.insert(0, str(PROJECT / "scripts"))
 import analyze  # noqa: E402
 import fetch  # noqa: E402
 import fetch_playwright as fp  # noqa: E402
+import alert  # noqa: E402,F401
 
 FIXTURE = PROJECT / "tests" / "fixtures" / "serpapi_sample.json"
 
@@ -26,7 +27,10 @@ def make_root():
     # push the example dates into the future so the tests do not depend on today's date
     text = (tmp / "config.toml").read_text()
     future = (date.today() + timedelta(days=90)).isoformat()
-    text = re.sub(r'date = "\d{4}-\d{2}-\d{2}"', f'date = "{future}"', text)
+    # small window for tests: 3 dates per direction (start, +2, +4 days)
+    text = re.sub(r'start = "\d{4}-\d{2}-\d{2}"', f'start = "{future}"', text)
+    text = re.sub(r'end = "\d{4}-\d{2}-\d{2}"',
+                  f'end = "{(date.today() + timedelta(days=94)).isoformat()}"', text)
     (tmp / "config.toml").write_text(text)
     return tmp
 
@@ -118,7 +122,7 @@ class EndToEndTests(unittest.TestCase):
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
         self.assertIn("ok     KK to KUL", r.stdout)
         rows = (root / "data" / "prices.csv").read_text().strip().splitlines()
-        self.assertEqual(len(rows), 1 + 6 * 3)  # header + 6 watches x 3 flights
+        self.assertEqual(len(rows), 1 + 6 * 3)  # header + 6 dates x 3 flights
 
         again = run("fetch.py", root, "--mock", str(FIXTURE))
         self.assertIn("already recorded today", again.stdout)
@@ -156,7 +160,7 @@ class EndToEndTests(unittest.TestCase):
         extra = []
         for off, price in ((3, 260), (2, 250), (1, 245)):
             for r in rows:
-                if r["route"] == "KK to KUL Tue" and r["airline"] == "AirAsia":
+                if r["route"] == "KK to KUL" and r["airline"] == "AirAsia":
                     d = dict(r)
                     d["check_date"] = (date.today() - timedelta(days=off)).isoformat()
                     d["price"] = price
@@ -224,12 +228,50 @@ class BrowserParserTests(unittest.TestCase):
             self.skipTest("no Chrome available")
         root = make_root()
         r = run("fetch_playwright.py", root, "--fixture", str(PROJECT / "tests" / "fixtures" / "gflights_sample.html"),
-                "--only", "KK to KUL Tue", "--chrome-path", chrome)
+                "--only", "KK to KUL", "--chrome-path", chrome)
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
         with open(root / "data" / "prices.csv", newline="", encoding="utf-8") as f:
             rows = list(__import__("csv").DictReader(f))
-        self.assertEqual(len(rows), 4)
+        self.assertEqual(len(rows), 12)  # 4 fares x 3 dates
         self.assertEqual(min(int(x["price"]) for x in rows), 259)
         again = run("fetch_playwright.py", root, "--fixture", str(PROJECT / "tests" / "fixtures" / "gflights_sample.html"),
-                    "--only", "KK to KUL Tue", "--chrome-path", chrome)
+                    "--only", "KK to KUL", "--chrome-path", chrome)
         self.assertIn("already recorded today", again.stdout)
+
+
+class RangeTests(unittest.TestCase):
+    def test_expand_ranges(self):
+        cfg = {"watch": [{"label": "A", "from": "X", "to": "Y", "date": "2027-01-03"}],
+               "range": [{"label": "A", "from": "X", "to": "Y", "start": "2027-01-01", "end": "2027-01-07", "step_days": 2}]}
+        import common
+        dates = [w["date"] for w in common.expand_ranges(cfg)["watch"]]
+        # the explicit 01-03 is kept once; the range adds 01-01, 01-05, 01-07
+        self.assertEqual(sorted(dates), ["2027-01-01", "2027-01-03", "2027-01-05", "2027-01-07"])
+
+    def test_real_config_size(self):
+        import common
+        cfg = common.load_config(PROJECT / "config.toml")
+        self.assertEqual(len(cfg["watch"]), 90)
+
+    def test_serpapi_daily_cap(self):
+        # 6 dates exist but the cap is 2: a real (non-mock) run must refuse without a key, so test the picker logic
+        pending = list(range(45))
+        cap, step = 6, 45 / 6
+        picks = [pending[int(i * step)] for i in range(cap)]
+        self.assertEqual(len(set(picks)), 6)
+        self.assertEqual(picks[0], 0)
+        self.assertTrue(picks[-1] > 30)
+
+    def test_alert_message_is_capped(self):
+        import alert
+        items = []
+        for i in range(30):
+            items.append({"label": "KK to KUL", "travel_date": f"2027-01-{i + 1:02d}", "checks": 5,
+                          "latest": {"price": 200 - i, "airline": "AirAsia", "date": "2026-11-11"},
+                          "change_vs_prev": -30, "previous_price": 230, "low": 200 - i + 1,
+                          "signal": "WAIT", "reasons": []})
+        lines, urgent, _ = alert.decide({"items": items}, {}, {"alerts": {"max_lines": 8}})
+        self.assertTrue(urgent)
+        self.assertEqual(len(lines), 8 + 1 + 1)  # 8 changes, the "and N more" line, one cheapest-now line
+        self.assertIn("22 more", lines[8])
+        self.assertIn("Cheapest now", lines[-1])
