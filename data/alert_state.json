@@ -1,0 +1,38 @@
+{
+  "KK to KUL Tue|2027-01-12": {
+    "signal": "WAIT",
+    "low": 300.0,
+    "price": 300.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL Sat|2027-01-16": {
+    "signal": "WAIT",
+    "low": 300.0,
+    "price": 300.0,
+    "date": "2026-11-11"
+  },
+  "KK to KUL Wed|2027-01-20": {
+    "signal": "WAIT",
+    "low": 300.0,
+    "price": 300.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK Tue|2027-01-19": {
+    "signal": "WAIT",
+    "low": 299.0,
+    "price": 299.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK Sat|2027-01-23": {
+    "signal": "WAIT",
+    "low": 300.0,
+    "price": 300.0,
+    "date": "2026-11-11"
+  },
+  "KUL to KK Wed|2027-01-27": {
+    "signal": "WAIT",
+    "low": 300.0,
+    "price": 300.0,
+    "date": "2026-11-11"
+  }
+}
