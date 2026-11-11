@@ -231,6 +231,7 @@ async function main() {
     app.append(el("p", { class: "empty" }, "Nothing to show. Add [[range]] entries with future dates in config.toml."));
     return;
   }
+  app.append(el("p", { class: "note" }, "Prices are collected by an automated browser, which Google shows about 9\u201312% above what a normal browser sees. Use them to find the cheapest dates and spot trends, then confirm the final price on Google Flights before you book."));
   const labels = [...new Set(data.items.map((it) => it.label))];
   labels.forEach((label) => app.append(routeSection(label, data.items.filter((it) => it.label === label))));
   const moves = movementTable(data.items);

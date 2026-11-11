@@ -72,3 +72,5 @@ svg.chart .bar.best { fill: var(--good); opacity: 1; }
 svg.chart .wknd { fill: var(--line); opacity: 0.45; }
 .alldates { margin-top: 12px; }
 .alldates .panel table { min-width: 520px; }
+
+.note { margin: 0 0 1rem; padding: .6rem .8rem; border-left: 3px solid #d9a400; background: rgba(217,164,0,.1); font-size: .9rem; }

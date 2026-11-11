@@ -179,6 +179,24 @@ def save_debug(page, label, travel, why):
         print(f"       could not save debug files: {e}")
 
 
+def prune_debug(days):
+    """Delete debug screenshots/HTML older than `days` days (they are local only, never committed)."""
+    folder = c.DATA / "debug"
+    if not folder.exists():
+        return
+    cutoff = time.time() - days * 86400
+    removed = 0
+    for f in folder.iterdir():
+        try:
+            if f.is_file() and f.stat().st_mtime < cutoff:
+                f.unlink()
+                removed += 1
+        except OSError:
+            pass
+    if removed:
+        print(f"       removed {removed} old debug files (older than {days} days)")
+
+
 def check_blocked(page):
     url = page.url.lower()
     body = ""
@@ -202,15 +220,38 @@ def handle_consent(page):
             return
 
 
-def load_results(page, debug_wait=30000):
-    """Wait until fares show up; expand the list once. Returns False if the page says no flights."""
-    try:
-        page.wait_for_function(r"() => /(RM|MYR)\s?\d/.test(document.body.innerText)", timeout=debug_wait)
-    except Exception:
-        body = norm(page.inner_text("body")).lower()
-        if "no options" in body or "no flights" in body or "no results" in body:
-            return False
-        raise
+ERROR_JS = r"() => /something went wrong/i.test(document.body.innerText)"
+READY_JS = (r"() => /(RM|MYR)\s?\d/.test(document.body.innerText) "
+            r"|| /something went wrong/i.test(document.body.innerText)")
+
+
+def load_results(page, wait_ms=30000, max_reloads=2):
+    """Wait until fares show up; expand the list once. Returns False if the page says no flights.
+
+    Google sometimes answers "Oops, something went wrong. Reload": press Reload (like a person would)
+    up to max_reloads times before giving up.
+    """
+    reloads = 0
+    while True:
+        try:
+            page.wait_for_function(READY_JS, timeout=wait_ms)
+        except Exception:
+            body = norm(page.inner_text("body")).lower()
+            if "no options" in body or "no flights" in body or "no results" in body:
+                return False
+            raise
+        if not page.evaluate(ERROR_JS):
+            break
+        if reloads >= max_reloads:
+            raise RuntimeError("Google keeps answering 'Oops, something went wrong' for this date")
+        reloads += 1
+        print(f"       Google showed 'something went wrong'; pressing Reload ({reloads}/{max_reloads})")
+        page.wait_for_timeout(random.uniform(3000, 7000))
+        btn = page.get_by_role("button", name=re.compile(r"^reload$", re.I))
+        if btn.count():
+            btn.first.click()
+        else:
+            page.reload(wait_until="domcontentloaded")
     page.wait_for_timeout(2500)  # let the rest of the list render
     more = page.get_by_role("button", name=re.compile(r"more flights", re.I))
     try:
@@ -228,11 +269,26 @@ def scrape(page, settings):
     return offers, parse_insights(data["body"], offers)
 
 
+OFFSCREEN = ["--window-position=-2400,-2400", "--window-size=1366,900"]
+MODES = ("headless", "newheadless", "headed", "offscreen", "chrome", "webkit")
+
+
 def launch(pw, args):
-    opts = {"headless": not args.headed}
+    """mode: headless (old hidden), newheadless (Chrome's newer hidden mode), headed (visible window),
+    offscreen (real window parked outside the screen), chrome (installed Google Chrome, parked offscreen)."""
+    mode = getattr(args, "mode", None) or ("headed" if args.headed else "headless")
+    if mode == "webkit":  # Safari's engine
+        return pw.webkit.launch(headless=True)
     path = args.chrome_path or os.environ.get("CHROME_PATH")
+    opts = {"headless": mode in ("headless", "newheadless")}
+    if mode in ("offscreen", "chrome"):
+        opts["args"] = OFFSCREEN
     if path:
         return pw.chromium.launch(executable_path=path, **opts)
+    if mode == "newheadless":
+        return pw.chromium.launch(channel="chromium", **opts)
+    if mode == "chrome":
+        return pw.chromium.launch(channel="chrome", **opts)
     try:
         return pw.chromium.launch(**opts)
     except Exception:
@@ -247,6 +303,7 @@ def main():
     ap.add_argument("--headed", action="store_true", help="show the browser window (first-run checking)")
     ap.add_argument("--debug", action="store_true", help="save a screenshot + HTML of every page to data/debug/")
     ap.add_argument("--chrome-path", help="path to a Chrome/Chromium executable (or set CHROME_PATH)")
+    ap.add_argument("--mode", choices=MODES, help="how to run the browser (default: headless, or headed with --headed)")
     ap.add_argument("--fixture", help="HTML file to parse instead of opening Google (offline test)")
     args = ap.parse_args()
 
@@ -262,6 +319,7 @@ def main():
     today = now.date()
     dmin = float(s.get("browser_delay_min", 20))
     dmax = float(s.get("browser_delay_max", 60))
+    prune_debug(float(s.get("debug_keep_days", 2)))
 
     existing = c.read_csv(c.DATA / "prices.csv")
     done = {(r["check_date"], r["route"], r["travel_date"]) for r in existing}
@@ -292,9 +350,12 @@ def main():
         page = ctx.new_page()
         page.set_default_timeout(45000)
         try:
-            for i, w in enumerate(todo):
+            queue, retried, i = list(todo), set(), 0
+            while i < len(queue):  # failed dates are added to the end once, for a second try
+                w = queue[i]
+                i += 1
                 label, travel = w["label"], w["date"]
-                if i and not args.fixture:
+                if i > 1 and not args.fixture:
                     pause = random.uniform(dmin, dmax)
                     print(f"       waiting {pause:.0f}s before the next page")
                     time.sleep(pause)
@@ -321,8 +382,13 @@ def main():
                 except Exception as e:
                     print(f"ERROR  {label} {travel}: {e}")
                     save_debug(page, label, travel, "error")
-                    failed += 1
                     streak += 1
+                    if id(w) not in retried and not args.fixture:
+                        retried.add(id(w))
+                        queue.append(w)
+                        print("       will try this date once more at the end of the run")
+                    else:
+                        failed += 1
                     if streak >= 3:
                         print("STOP   three failures in a row; stopping")
                         break
