@@ -24,28 +24,41 @@ daily_summary = false           # true = also send a short summary every day
 # One search returns every airline, so you do not list airlines.
 # 7 blocks use about 217 searches a month; stay at 7 or fewer on the free plan.
 # Airport codes: BKI = Kota Kinabalu, KUL = Kuala Lumpur, PEN = Penang.
+# Dates are flexible: several candidate dates per direction, so the dashboard shows which is cheapest.
 # When a travel date has passed, that block is skipped automatically.
 
 [[watch]]
-label = "KK to KUL"
+label = "KK to KUL Tue"
 from = "BKI"
 to = "KUL"
-date = "2026-12-20"             # <-- change
+date = "2027-01-12"             # <-- change
 
 [[watch]]
-label = "KUL to KK"
+label = "KK to KUL Sat"
+from = "BKI"
+to = "KUL"
+date = "2027-01-16"             # <-- change
+
+[[watch]]
+label = "KK to KUL Wed"
+from = "BKI"
+to = "KUL"
+date = "2027-01-20"             # <-- change
+
+[[watch]]
+label = "KUL to KK Tue"
 from = "KUL"
 to = "BKI"
-date = "2026-12-27"             # <-- change
+date = "2027-01-19"             # <-- change
 
 [[watch]]
-label = "KK to PEN"
-from = "BKI"
-to = "PEN"
-date = "2026-12-20"             # <-- change
-
-[[watch]]
-label = "PEN to KK"
-from = "PEN"
+label = "KUL to KK Sat"
+from = "KUL"
 to = "BKI"
-date = "2026-12-27"             # <-- change
+date = "2027-01-23"             # <-- change
+
+[[watch]]
+label = "KUL to KK Wed"
+from = "KUL"
+to = "BKI"
+date = "2027-01-27"             # <-- change
