@@ -120,3 +120,9 @@ check_date,route,travel_date,price_level,lowest_price,typical_low,typical_high
 2026-11-15,KUL to KK,2026-12-01,typical,291,165,410
 2026-11-15,KUL to KK,2026-12-31,typical,372,165,410
 2026-11-15,KUL to KK,2027-01-30,high,366,145,230
+2026-11-16,KK to KUL,2026-12-01,typical,291,165,365
+2026-11-16,KK to KUL,2026-12-31,high,372,165,365
+2026-11-16,KK to KUL,2027-01-30,high,300,145,270
+2026-11-16,KUL to KK,2026-12-01,,,,
+2026-11-16,KUL to KK,2026-12-31,typical,372,165,410
+2026-11-16,KUL to KK,2027-01-30,high,366,145,230
