@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-23 18:57 Malaysia time",
+  "updated": "2026-11-24 20:44 Malaysia time",
   "currency": "MYR",
   "min_history": 14,
-  "searches_used": 78,
+  "searches_used": 84,
   "search_limit": 240,
   "items": [
     {
@@ -10,21 +10,21 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2026-12-01",
-      "days_to_departure": 8,
-      "checks": 13,
+      "days_to_departure": 7,
+      "checks": 14,
       "latest": {
-        "date": "2026-11-23",
-        "price": 342.0,
+        "date": "2026-11-24",
+        "price": 346.0,
         "airline": "AirAsia",
-        "flight_no": "AK 5131",
-        "dep_time": "23:25"
+        "flight_no": "AK 5141",
+        "dep_time": "20:50"
       },
-      "previous_price": 327.0,
-      "change_vs_prev": 15.0,
+      "previous_price": 342.0,
+      "change_vs_prev": 4.0,
       "first_price": 329.0,
-      "change_vs_first": 13.0,
+      "change_vs_first": 17.0,
       "low": 270.0,
-      "high": 342.0,
+      "high": 346.0,
       "series": [
         [
           "2026-11-11",
@@ -77,93 +77,93 @@
         [
           "2026-11-23",
           342.0
+        ],
+        [
+          "2026-11-24",
+          346.0
         ]
       ],
       "offers": [
         {
           "airline": "AirAsia",
-          "flight_no": "AK 5131",
-          "dep_time": "23:25",
-          "price": 342.0
+          "flight_no": "AK 5141",
+          "dep_time": "20:50",
+          "price": 346.0
         },
         {
           "airline": "AirAsia",
           "flight_no": "AK 5135",
           "dep_time": "06:05",
-          "price": 342.0
+          "price": 346.0
         },
         {
           "airline": "AirAsia",
           "flight_no": "AK 5111",
           "dep_time": "07:05",
-          "price": 342.0
-        },
-        {
-          "airline": "Batik Air",
-          "flight_no": "OD 1005",
-          "dep_time": "16:50",
-          "price": 344.0
-        },
-        {
-          "airline": "Batik Air",
-          "flight_no": "OD 1003",
-          "dep_time": "11:00",
-          "price": 344.0
-        },
-        {
-          "airline": "AirAsia",
-          "flight_no": "AK 5109",
-          "dep_time": "09:15",
-          "price": 380.0
-        },
-        {
-          "airline": "AirAsia",
-          "flight_no": "AK 5105",
-          "dep_time": "10:05",
-          "price": 380.0
-        },
-        {
-          "airline": "AirAsia",
-          "flight_no": "AK 5107",
-          "dep_time": "11:25",
-          "price": 380.0
-        },
-        {
-          "airline": "AirAsia",
-          "flight_no": "AK 5113",
-          "dep_time": "13:00",
-          "price": 380.0
-        },
-        {
-          "airline": "AirAsia",
-          "flight_no": "AK 5141",
-          "dep_time": "20:50",
-          "price": 380.0
+          "price": 346.0
         },
         {
           "airline": "AirAsia",
           "flight_no": "AK 5115",
           "dep_time": "22:25",
-          "price": 380.0
+          "price": 346.0
+        },
+        {
+          "airline": "AirAsia",
+          "flight_no": "AK 5131",
+          "dep_time": "23:25",
+          "price": 346.0
+        },
+        {
+          "airline": "AirAsia",
+          "flight_no": "AK 5113",
+          "dep_time": "13:00",
+          "price": 385.0
+        },
+        {
+          "airline": "AirAsia",
+          "flight_no": "AK 5105",
+          "dep_time": "10:05",
+          "price": 385.0
+        },
+        {
+          "airline": "AirAsia",
+          "flight_no": "AK 5107",
+          "dep_time": "11:25",
+          "price": 385.0
+        },
+        {
+          "airline": "Malaysia Airlines",
+          "flight_no": "MH 2637",
+          "dep_time": "05:20",
+          "price": 390.0
+        },
+        {
+          "airline": "AirAsia",
+          "flight_no": "AK 5109",
+          "dep_time": "09:15",
+          "price": 408.0
+        },
+        {
+          "airline": "AirAsia",
+          "flight_no": "AK 5139",
+          "dep_time": "15:00",
+          "price": 408.0
         },
         {
           "airline": "Malaysia Airlines",
           "flight_no": "MH 2639",
           "dep_time": "22:15",
-          "price": 390.0
+          "price": 450.0
         }
       ],
       "insight": {
         "price_level": "typical",
-        "lowest_price": "342",
+        "lowest_price": "346",
         "typical_low": "225",
         "typical_high": "375"
       },
       "google_history": [
-        [
-          "2026-09-23",
-          287
-        ],
         [
           "2026-09-24",
           287
@@ -402,20 +402,24 @@
         ],
         [
           "2026-11-22",
-          342
+          327
+        ],
+        [
+          "2026-11-23",
+          346
         ]
       ],
       "stats": {
-        "rises": 5,
+        "rises": 6,
         "drops": 3,
         "unchanged": 4,
-        "avg_rise": 26.2,
+        "avg_rise": 22.5,
         "avg_drop": -39.33,
-        "rise_share": 0.417
+        "rise_share": 0.462
       },
-      "signal": "BOOK SOON",
+      "signal": "BOOK NOW",
       "reasons": [
-        "Inside 3 weeks of departure, when waiting gets riskier.",
+        "Only 7 days to departure, little time left to wait.",
         "Google rates this price as typical (typical RM 225 to 375)."
       ],
       "forecast": {
@@ -428,7 +432,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2026-12-03",
-      "days_to_departure": 10,
+      "days_to_departure": 9,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -553,7 +557,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2026-12-05",
-      "days_to_departure": 12,
+      "days_to_departure": 11,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -678,7 +682,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2026-12-07",
-      "days_to_departure": 14,
+      "days_to_departure": 13,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -803,7 +807,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2026-12-09",
-      "days_to_departure": 16,
+      "days_to_departure": 15,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -928,7 +932,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2026-12-11",
-      "days_to_departure": 18,
+      "days_to_departure": 17,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -1053,7 +1057,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2026-12-13",
-      "days_to_departure": 20,
+      "days_to_departure": 19,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -1178,7 +1182,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2026-12-15",
-      "days_to_departure": 22,
+      "days_to_departure": 21,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -1288,9 +1292,10 @@
         "avg_drop": null,
         "rise_share": null
       },
-      "signal": "WAIT",
+      "signal": "BOOK SOON",
       "reasons": [
-        "Google rates this price as high for the route."
+        "Inside 3 weeks of departure, when waiting gets riskier.",
+        "Google rates this price as high."
       ],
       "forecast": {
         "expected_7d": null,
@@ -1302,7 +1307,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2026-12-17",
-      "days_to_departure": 24,
+      "days_to_departure": 23,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -1426,7 +1431,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2026-12-19",
-      "days_to_departure": 26,
+      "days_to_departure": 25,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -1550,7 +1555,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2026-12-21",
-      "days_to_departure": 28,
+      "days_to_departure": 27,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -1674,7 +1679,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2026-12-23",
-      "days_to_departure": 30,
+      "days_to_departure": 29,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -1798,7 +1803,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2026-12-25",
-      "days_to_departure": 32,
+      "days_to_departure": 31,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -1922,7 +1927,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2026-12-27",
-      "days_to_departure": 34,
+      "days_to_departure": 33,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -2046,7 +2051,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2026-12-29",
-      "days_to_departure": 36,
+      "days_to_departure": 35,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -2170,14 +2175,14 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2026-12-31",
-      "days_to_departure": 38,
-      "checks": 13,
+      "days_to_departure": 37,
+      "checks": 14,
       "latest": {
-        "date": "2026-11-23",
+        "date": "2026-11-24",
         "price": 393.0,
         "airline": "AirAsia",
-        "flight_no": "AK 5109",
-        "dep_time": "09:15"
+        "flight_no": "AK 5135",
+        "dep_time": "06:05"
       },
       "previous_price": 393.0,
       "change_vs_prev": 0.0,
@@ -2237,15 +2242,13 @@
         [
           "2026-11-23",
           393.0
+        ],
+        [
+          "2026-11-24",
+          393.0
         ]
       ],
       "offers": [
-        {
-          "airline": "AirAsia",
-          "flight_no": "AK 5109",
-          "dep_time": "09:15",
-          "price": 393.0
-        },
         {
           "airline": "AirAsia",
           "flight_no": "AK 5135",
@@ -2284,6 +2287,18 @@
         },
         {
           "airline": "AirAsia",
+          "flight_no": "AK 5113",
+          "dep_time": "13:00",
+          "price": 435.0
+        },
+        {
+          "airline": "AirAsia",
+          "flight_no": "AK 5109",
+          "dep_time": "09:15",
+          "price": 435.0
+        },
+        {
+          "airline": "AirAsia",
           "flight_no": "AK 5105",
           "dep_time": "10:05",
           "price": 435.0
@@ -2292,12 +2307,6 @@
           "airline": "AirAsia",
           "flight_no": "AK 5107",
           "dep_time": "11:25",
-          "price": 435.0
-        },
-        {
-          "airline": "AirAsia",
-          "flight_no": "AK 5113",
-          "dep_time": "13:00",
           "price": 435.0
         },
         {
@@ -2320,10 +2329,6 @@
         "typical_high": "375"
       },
       "google_history": [
-        [
-          "2026-09-23",
-          374
-        ],
         [
           "2026-09-24",
           374
@@ -2563,22 +2568,27 @@
         [
           "2026-11-22",
           393
+        ],
+        [
+          "2026-11-23",
+          393
         ]
       ],
       "stats": {
         "rises": 1,
         "drops": 0,
-        "unchanged": 11,
+        "unchanged": 12,
         "avg_rise": 21.0,
         "avg_drop": null,
-        "rise_share": 0.083
+        "rise_share": 0.077
       },
-      "signal": "WAIT",
+      "signal": "BOOK SOON",
       "reasons": [
-        "Google rates this price as high for the route."
+        "Price is rising about RM 3 a day.",
+        "Google rates this price as high (typical RM 225 to 375)."
       ],
       "forecast": {
-        "expected_7d": null,
+        "expected_7d": 414,
         "confidence": "low"
       }
     },
@@ -2587,7 +2597,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2027-01-02",
-      "days_to_departure": 40,
+      "days_to_departure": 39,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -2711,7 +2721,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2027-01-04",
-      "days_to_departure": 42,
+      "days_to_departure": 41,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -2835,7 +2845,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2027-01-06",
-      "days_to_departure": 44,
+      "days_to_departure": 43,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -2959,7 +2969,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2027-01-08",
-      "days_to_departure": 46,
+      "days_to_departure": 45,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -3083,7 +3093,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2027-01-10",
-      "days_to_departure": 48,
+      "days_to_departure": 47,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -3207,7 +3217,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2027-01-12",
-      "days_to_departure": 50,
+      "days_to_departure": 49,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -3331,7 +3341,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2027-01-14",
-      "days_to_departure": 52,
+      "days_to_departure": 51,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -3455,7 +3465,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2027-01-16",
-      "days_to_departure": 54,
+      "days_to_departure": 53,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -3579,7 +3589,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2027-01-18",
-      "days_to_departure": 56,
+      "days_to_departure": 55,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -3703,7 +3713,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2027-01-20",
-      "days_to_departure": 58,
+      "days_to_departure": 57,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -3827,7 +3837,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2027-01-22",
-      "days_to_departure": 60,
+      "days_to_departure": 59,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -3951,7 +3961,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2027-01-24",
-      "days_to_departure": 62,
+      "days_to_departure": 61,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -4075,7 +4085,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2027-01-26",
-      "days_to_departure": 64,
+      "days_to_departure": 63,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -4199,7 +4209,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2027-01-28",
-      "days_to_departure": 66,
+      "days_to_departure": 65,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -4323,17 +4333,17 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2027-01-30",
-      "days_to_departure": 68,
-      "checks": 13,
+      "days_to_departure": 67,
+      "checks": 14,
       "latest": {
-        "date": "2026-11-23",
+        "date": "2026-11-24",
         "price": 302.0,
         "airline": "AirAsia",
         "flight_no": "AK 5113",
         "dep_time": "13:00"
       },
-      "previous_price": 300.0,
-      "change_vs_prev": 2.0,
+      "previous_price": 302.0,
+      "change_vs_prev": 0.0,
       "first_price": 300.0,
       "change_vs_first": 2.0,
       "low": 300.0,
@@ -4389,6 +4399,10 @@
         ],
         [
           "2026-11-23",
+          302.0
+        ],
+        [
+          "2026-11-24",
           302.0
         ]
       ],
@@ -4473,10 +4487,6 @@
         "typical_high": "305"
       },
       "google_history": [
-        [
-          "2026-09-23",
-          395
-        ],
         [
           "2026-09-24",
           395
@@ -4715,24 +4725,28 @@
         ],
         [
           "2026-11-22",
+          300
+        ],
+        [
+          "2026-11-23",
           302
         ]
       ],
       "stats": {
         "rises": 1,
         "drops": 0,
-        "unchanged": 11,
+        "unchanged": 12,
         "avg_rise": 2.0,
         "avg_drop": null,
-        "rise_share": 0.083
+        "rise_share": 0.077
       },
-      "signal": "WATCH",
+      "signal": "WAIT",
       "reasons": [
-        "Still collecting history (13 of 14 daily checks needed for the trend rule).",
+        "No rising trend and the price is not unusually low.",
         "Google rates this price as typical (typical RM 145 to 305)."
       ],
       "forecast": {
-        "expected_7d": null,
+        "expected_7d": 303,
         "confidence": "low"
       }
     },
@@ -4741,7 +4755,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2027-02-01",
-      "days_to_departure": 70,
+      "days_to_departure": 69,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -4865,7 +4879,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2027-02-03",
-      "days_to_departure": 72,
+      "days_to_departure": 71,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -4989,7 +5003,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2027-02-05",
-      "days_to_departure": 74,
+      "days_to_departure": 73,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -5113,7 +5127,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2027-02-07",
-      "days_to_departure": 76,
+      "days_to_departure": 75,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -5237,7 +5251,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2027-02-09",
-      "days_to_departure": 78,
+      "days_to_departure": 77,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -5361,7 +5375,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2027-02-11",
-      "days_to_departure": 80,
+      "days_to_departure": 79,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -5485,7 +5499,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2027-02-13",
-      "days_to_departure": 82,
+      "days_to_departure": 81,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -5609,7 +5623,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2027-02-15",
-      "days_to_departure": 84,
+      "days_to_departure": 83,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -5733,7 +5747,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2027-02-17",
-      "days_to_departure": 86,
+      "days_to_departure": 85,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -5857,7 +5871,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2027-02-19",
-      "days_to_departure": 88,
+      "days_to_departure": 87,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -5982,7 +5996,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2027-02-21",
-      "days_to_departure": 90,
+      "days_to_departure": 89,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -6106,7 +6120,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2027-02-23",
-      "days_to_departure": 92,
+      "days_to_departure": 91,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -6230,7 +6244,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2027-02-25",
-      "days_to_departure": 94,
+      "days_to_departure": 93,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -6354,7 +6368,7 @@
       "from": "BKI",
       "to": "KUL",
       "travel_date": "2027-02-27",
-      "days_to_departure": 96,
+      "days_to_departure": 95,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -6478,19 +6492,19 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2026-12-01",
-      "days_to_departure": 8,
-      "checks": 13,
+      "days_to_departure": 7,
+      "checks": 14,
       "latest": {
-        "date": "2026-11-23",
-        "price": 328.0,
+        "date": "2026-11-24",
+        "price": 324.0,
         "airline": "Batik Air",
         "flight_no": "OD 1002",
         "dep_time": "07:30"
       },
-      "previous_price": 352.0,
-      "change_vs_prev": -24.0,
+      "previous_price": 328.0,
+      "change_vs_prev": -4.0,
       "first_price": 329.0,
-      "change_vs_first": -1.0,
+      "change_vs_first": -5.0,
       "low": 265.0,
       "high": 352.0,
       "series": [
@@ -6545,6 +6559,10 @@
         [
           "2026-11-23",
           328.0
+        ],
+        [
+          "2026-11-24",
+          324.0
         ]
       ],
       "offers": [
@@ -6552,55 +6570,49 @@
           "airline": "Batik Air",
           "flight_no": "OD 1002",
           "dep_time": "07:30",
-          "price": 328.0
-        },
-        {
-          "airline": "Batik Air",
-          "flight_no": "OD 1004",
-          "dep_time": "13:30",
-          "price": 328.0
-        },
-        {
-          "airline": "Firefly",
-          "flight_no": "FY 2530",
-          "dep_time": "06:50",
-          "price": 351.0
-        },
-        {
-          "airline": "AirAsia",
-          "flight_no": "AK 5112",
-          "dep_time": "16:00",
-          "price": 380.0
-        },
-        {
-          "airline": "AirAsia",
-          "flight_no": "AK 5108",
-          "dep_time": "06:05",
-          "price": 380.0
-        },
-        {
-          "airline": "AirAsia",
-          "flight_no": "AK 5104",
-          "dep_time": "07:00",
-          "price": 380.0
-        },
-        {
-          "airline": "AirAsia",
-          "flight_no": "AK 5110",
-          "dep_time": "10:05",
-          "price": 380.0
-        },
-        {
-          "airline": "AirAsia",
-          "flight_no": "AK 5142",
-          "dep_time": "17:30",
-          "price": 380.0
+          "price": 324.0
         },
         {
           "airline": "AirAsia",
           "flight_no": "AK 5130",
           "dep_time": "20:10",
-          "price": 380.0
+          "price": 346.0
+        },
+        {
+          "airline": "Batik Air",
+          "flight_no": "OD 1004",
+          "dep_time": "13:30",
+          "price": 347.0
+        },
+        {
+          "airline": "AirAsia",
+          "flight_no": "AK 5108",
+          "dep_time": "06:05",
+          "price": 385.0
+        },
+        {
+          "airline": "AirAsia",
+          "flight_no": "AK 5104",
+          "dep_time": "07:00",
+          "price": 385.0
+        },
+        {
+          "airline": "AirAsia",
+          "flight_no": "AK 5110",
+          "dep_time": "10:05",
+          "price": 385.0
+        },
+        {
+          "airline": "AirAsia",
+          "flight_no": "AK 5112",
+          "dep_time": "16:00",
+          "price": 385.0
+        },
+        {
+          "airline": "AirAsia",
+          "flight_no": "AK 5142",
+          "dep_time": "17:30",
+          "price": 385.0
         },
         {
           "airline": "AirAsia",
@@ -6618,6 +6630,12 @@
           "airline": "AirAsia",
           "flight_no": "AK 5140",
           "dep_time": "11:45",
+          "price": 408.0
+        },
+        {
+          "airline": "AirAsia",
+          "flight_no": "AK 5114",
+          "dep_time": "19:10",
           "price": 408.0
         }
       ],
@@ -6875,15 +6893,15 @@
       ],
       "stats": {
         "rises": 4,
-        "drops": 7,
+        "drops": 8,
         "unchanged": 1,
         "avg_rise": 46.5,
-        "avg_drop": -26.71,
-        "rise_share": 0.333
+        "avg_drop": -23.88,
+        "rise_share": 0.308
       },
-      "signal": "BOOK SOON",
+      "signal": "BOOK NOW",
       "reasons": [
-        "Inside 3 weeks of departure, when waiting gets riskier."
+        "Only 7 days to departure, little time left to wait."
       ],
       "forecast": {
         "expected_7d": null,
@@ -6895,7 +6913,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2026-12-03",
-      "days_to_departure": 10,
+      "days_to_departure": 9,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -7020,7 +7038,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2026-12-05",
-      "days_to_departure": 12,
+      "days_to_departure": 11,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -7145,7 +7163,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2026-12-07",
-      "days_to_departure": 14,
+      "days_to_departure": 13,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -7270,7 +7288,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2026-12-09",
-      "days_to_departure": 16,
+      "days_to_departure": 15,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -7395,7 +7413,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2026-12-11",
-      "days_to_departure": 18,
+      "days_to_departure": 17,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -7520,7 +7538,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2026-12-13",
-      "days_to_departure": 20,
+      "days_to_departure": 19,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -7645,7 +7663,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2026-12-15",
-      "days_to_departure": 22,
+      "days_to_departure": 21,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -7755,9 +7773,10 @@
         "avg_drop": null,
         "rise_share": null
       },
-      "signal": "WAIT",
+      "signal": "BOOK SOON",
       "reasons": [
-        "Google rates this price as high for the route."
+        "Inside 3 weeks of departure, when waiting gets riskier.",
+        "Google rates this price as high."
       ],
       "forecast": {
         "expected_7d": null,
@@ -7769,7 +7788,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2026-12-17",
-      "days_to_departure": 24,
+      "days_to_departure": 23,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -7893,7 +7912,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2026-12-19",
-      "days_to_departure": 26,
+      "days_to_departure": 25,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -8017,7 +8036,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2026-12-21",
-      "days_to_departure": 28,
+      "days_to_departure": 27,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -8142,7 +8161,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2026-12-23",
-      "days_to_departure": 30,
+      "days_to_departure": 29,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -8266,7 +8285,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2026-12-25",
-      "days_to_departure": 32,
+      "days_to_departure": 31,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -8390,7 +8409,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2026-12-27",
-      "days_to_departure": 34,
+      "days_to_departure": 33,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -8514,7 +8533,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2026-12-29",
-      "days_to_departure": 36,
+      "days_to_departure": 35,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -8639,19 +8658,19 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2026-12-31",
-      "days_to_departure": 38,
-      "checks": 13,
+      "days_to_departure": 37,
+      "checks": 14,
       "latest": {
-        "date": "2026-11-23",
-        "price": 393.0,
-        "airline": "AirAsia",
-        "flight_no": "AK 5112",
-        "dep_time": "16:00"
+        "date": "2026-11-24",
+        "price": 374.0,
+        "airline": "Batik Air",
+        "flight_no": "OD 1006",
+        "dep_time": "19:45"
       },
       "previous_price": 393.0,
-      "change_vs_prev": 0.0,
+      "change_vs_prev": -19.0,
       "first_price": 372.0,
-      "change_vs_first": 21.0,
+      "change_vs_first": 2.0,
       "low": 368.0,
       "high": 393.0,
       "series": [
@@ -8706,9 +8725,25 @@
         [
           "2026-11-23",
           393.0
+        ],
+        [
+          "2026-11-24",
+          374.0
         ]
       ],
       "offers": [
+        {
+          "airline": "Batik Air",
+          "flight_no": "OD 1006",
+          "dep_time": "19:45",
+          "price": 374.0
+        },
+        {
+          "airline": "Batik Air",
+          "flight_no": "OD 1002",
+          "dep_time": "07:30",
+          "price": 374.0
+        },
         {
           "airline": "AirAsia",
           "flight_no": "AK 5112",
@@ -8765,28 +8800,16 @@
         },
         {
           "airline": "Batik Air",
-          "flight_no": "OD 1006",
-          "dep_time": "19:45",
-          "price": 402.0
-        },
-        {
-          "airline": "Batik Air",
-          "flight_no": "OD 1002",
-          "dep_time": "07:30",
-          "price": 402.0
-        },
-        {
-          "airline": "Batik Air",
           "flight_no": "OD 1004",
           "dep_time": "13:30",
-          "price": 427.0
+          "price": 406.0
         }
       ],
       "insight": {
-        "price_level": "typical",
-        "lowest_price": "393",
-        "typical_low": "255",
-        "typical_high": "435"
+        "price_level": "",
+        "lowest_price": "",
+        "typical_low": "",
+        "typical_high": ""
       },
       "google_history": [
         [
@@ -9036,19 +9059,18 @@
       ],
       "stats": {
         "rises": 2,
-        "drops": 1,
+        "drops": 2,
         "unchanged": 9,
         "avg_rise": 12.5,
-        "avg_drop": -4.0,
-        "rise_share": 0.167
+        "avg_drop": -11.5,
+        "rise_share": 0.154
       },
-      "signal": "WATCH",
+      "signal": "BOOK SOON",
       "reasons": [
-        "Still collecting history (13 of 14 daily checks needed for the trend rule).",
-        "Google rates this price as typical (typical RM 255 to 435)."
+        "Price is rising about RM 2 a day."
       ],
       "forecast": {
-        "expected_7d": null,
+        "expected_7d": 389,
         "confidence": "low"
       }
     },
@@ -9057,7 +9079,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2027-01-02",
-      "days_to_departure": 40,
+      "days_to_departure": 39,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -9181,7 +9203,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2027-01-04",
-      "days_to_departure": 42,
+      "days_to_departure": 41,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -9305,7 +9327,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2027-01-06",
-      "days_to_departure": 44,
+      "days_to_departure": 43,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -9429,7 +9451,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2027-01-08",
-      "days_to_departure": 46,
+      "days_to_departure": 45,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -9553,7 +9575,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2027-01-10",
-      "days_to_departure": 48,
+      "days_to_departure": 47,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -9677,7 +9699,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2027-01-12",
-      "days_to_departure": 50,
+      "days_to_departure": 49,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -9801,7 +9823,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2027-01-14",
-      "days_to_departure": 52,
+      "days_to_departure": 51,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -9925,7 +9947,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2027-01-16",
-      "days_to_departure": 54,
+      "days_to_departure": 53,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -10049,7 +10071,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2027-01-18",
-      "days_to_departure": 56,
+      "days_to_departure": 55,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -10173,7 +10195,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2027-01-20",
-      "days_to_departure": 58,
+      "days_to_departure": 57,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -10297,7 +10319,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2027-01-22",
-      "days_to_departure": 60,
+      "days_to_departure": 59,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -10421,7 +10443,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2027-01-24",
-      "days_to_departure": 62,
+      "days_to_departure": 61,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -10545,7 +10567,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2027-01-26",
-      "days_to_departure": 64,
+      "days_to_departure": 63,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -10669,7 +10691,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2027-01-28",
-      "days_to_departure": 66,
+      "days_to_departure": 65,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -10793,14 +10815,14 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2027-01-30",
-      "days_to_departure": 68,
-      "checks": 13,
+      "days_to_departure": 67,
+      "checks": 14,
       "latest": {
-        "date": "2026-11-23",
+        "date": "2026-11-24",
         "price": 366.0,
         "airline": "AirAsia",
-        "flight_no": "AK 5106",
-        "dep_time": "08:00"
+        "flight_no": "AK 5104",
+        "dep_time": "07:00"
       },
       "previous_price": 366.0,
       "change_vs_prev": 0.0,
@@ -10860,19 +10882,23 @@
         [
           "2026-11-23",
           366.0
+        ],
+        [
+          "2026-11-24",
+          366.0
         ]
       ],
       "offers": [
         {
           "airline": "AirAsia",
-          "flight_no": "AK 5106",
-          "dep_time": "08:00",
+          "flight_no": "AK 5104",
+          "dep_time": "07:00",
           "price": 366.0
         },
         {
           "airline": "AirAsia",
-          "flight_no": "AK 5104",
-          "dep_time": "07:00",
+          "flight_no": "AK 5106",
+          "dep_time": "08:00",
           "price": 366.0
         },
         {
@@ -10889,45 +10915,45 @@
         },
         {
           "airline": "AirAsia",
-          "flight_no": "AK 5136",
-          "dep_time": "09:20",
-          "price": 398.0
+          "flight_no": "AK 5110",
+          "dep_time": "10:05",
+          "price": 408.0
         },
         {
           "airline": "AirAsia",
-          "flight_no": "AK 5110",
-          "dep_time": "10:05",
-          "price": 398.0
+          "flight_no": "AK 5136",
+          "dep_time": "09:20",
+          "price": 408.0
         },
         {
           "airline": "AirAsia",
           "flight_no": "AK 5140",
           "dep_time": "11:45",
-          "price": 398.0
+          "price": 408.0
         },
         {
           "airline": "AirAsia",
           "flight_no": "AK 5138",
           "dep_time": "13:40",
-          "price": 398.0
+          "price": 408.0
         },
         {
           "airline": "AirAsia",
           "flight_no": "AK 5133",
           "dep_time": "15:05",
-          "price": 398.0
+          "price": 408.0
         },
         {
           "airline": "AirAsia",
           "flight_no": "AK 5112",
           "dep_time": "16:00",
-          "price": 398.0
+          "price": 408.0
         },
         {
           "airline": "AirAsia",
           "flight_no": "AK 5142",
           "dep_time": "17:30",
-          "price": 398.0
+          "price": 408.0
         },
         {
           "airline": "Malaysia Airlines",
@@ -10943,10 +10969,6 @@
         "typical_high": "270"
       },
       "google_history": [
-        [
-          "2026-09-23",
-          395
-        ],
         [
           "2026-09-24",
           395
@@ -11186,22 +11208,27 @@
         [
           "2026-11-22",
           366
+        ],
+        [
+          "2026-11-23",
+          366
         ]
       ],
       "stats": {
         "rises": 0,
         "drops": 0,
-        "unchanged": 12,
+        "unchanged": 13,
         "avg_rise": null,
         "avg_drop": null,
         "rise_share": 0.0
       },
-      "signal": "WAIT",
+      "signal": "BOOK SOON",
       "reasons": [
-        "Google rates this price as high for the route."
+        "Price is in the cheapest fifth of its own history.",
+        "Google rates this price as high (typical RM 145 to 270)."
       ],
       "forecast": {
-        "expected_7d": null,
+        "expected_7d": 366,
         "confidence": "low"
       }
     },
@@ -11210,7 +11237,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2027-02-01",
-      "days_to_departure": 70,
+      "days_to_departure": 69,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -11334,7 +11361,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2027-02-03",
-      "days_to_departure": 72,
+      "days_to_departure": 71,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -11458,7 +11485,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2027-02-05",
-      "days_to_departure": 74,
+      "days_to_departure": 73,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -11582,7 +11609,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2027-02-07",
-      "days_to_departure": 76,
+      "days_to_departure": 75,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -11706,7 +11733,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2027-02-09",
-      "days_to_departure": 78,
+      "days_to_departure": 77,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -11831,7 +11858,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2027-02-11",
-      "days_to_departure": 80,
+      "days_to_departure": 79,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -11956,7 +11983,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2027-02-13",
-      "days_to_departure": 82,
+      "days_to_departure": 81,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -12081,7 +12108,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2027-02-15",
-      "days_to_departure": 84,
+      "days_to_departure": 83,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -12206,7 +12233,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2027-02-17",
-      "days_to_departure": 86,
+      "days_to_departure": 85,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -12331,7 +12358,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2027-02-19",
-      "days_to_departure": 88,
+      "days_to_departure": 87,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -12456,7 +12483,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2027-02-21",
-      "days_to_departure": 90,
+      "days_to_departure": 89,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -12581,7 +12608,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2027-02-23",
-      "days_to_departure": 92,
+      "days_to_departure": 91,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -12706,7 +12733,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2027-02-25",
-      "days_to_departure": 94,
+      "days_to_departure": 93,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
@@ -12831,7 +12858,7 @@
       "from": "KUL",
       "to": "BKI",
       "travel_date": "2027-02-27",
-      "days_to_departure": 96,
+      "days_to_departure": 95,
       "checks": 1,
       "latest": {
         "date": "2026-11-11",
