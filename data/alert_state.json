@@ -2,8 +2,8 @@
   "KK to KUL|2026-12-01": {
     "signal": "BOOK NOW",
     "low": 270.0,
-    "price": 355.0,
-    "date": "2026-11-26"
+    "price": 382.0,
+    "date": "2026-11-27"
   },
   "KK to KUL|2026-12-03": {
     "signal": "BOOK NOW",
@@ -90,10 +90,10 @@
     "date": "2026-11-11"
   },
   "KK to KUL|2026-12-31": {
-    "signal": "BOOK SOON",
+    "signal": "WAIT",
     "low": 372.0,
-    "price": 393.0,
-    "date": "2026-11-26"
+    "price": 373.0,
+    "date": "2026-11-27"
   },
   "KK to KUL|2027-01-02": {
     "signal": "WAIT",
@@ -182,8 +182,8 @@
   "KK to KUL|2027-01-30": {
     "signal": "WAIT",
     "low": 300.0,
-    "price": 302.0,
-    "date": "2026-11-26"
+    "price": 307.0,
+    "date": "2026-11-27"
   },
   "KK to KUL|2027-02-01": {
     "signal": "WAIT",
@@ -272,8 +272,8 @@
   "KUL to KK|2026-12-01": {
     "signal": "BOOK NOW",
     "low": 265.0,
-    "price": 419.0,
-    "date": "2026-11-26"
+    "price": 394.0,
+    "date": "2026-11-27"
   },
   "KUL to KK|2026-12-03": {
     "signal": "BOOK NOW",
@@ -360,10 +360,10 @@
     "date": "2026-11-11"
   },
   "KUL to KK|2026-12-31": {
-    "signal": "BOOK SOON",
+    "signal": "WAIT",
     "low": 368.0,
-    "price": 372.0,
-    "date": "2026-11-26"
+    "price": 399.0,
+    "date": "2026-11-27"
   },
   "KUL to KK|2027-01-02": {
     "signal": "WAIT",
@@ -450,10 +450,10 @@
     "date": "2026-11-11"
   },
   "KUL to KK|2027-01-30": {
-    "signal": "BOOK SOON",
+    "signal": "WAIT",
     "low": 366.0,
-    "price": 366.0,
-    "date": "2026-11-26"
+    "price": 372.0,
+    "date": "2026-11-27"
   },
   "KUL to KK|2027-02-01": {
     "signal": "WAIT",
